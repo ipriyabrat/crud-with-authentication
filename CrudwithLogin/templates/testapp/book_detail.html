@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load static %}
+ 
+{% block body_block %}
+
+<link rel="stylesheet" type="text/css"   href="{% static 'css/detail.css' %}">
+
+<h1>BOOK DETAILS INFROMATIONS</h1>
+<h2>DETAILS OF:{{book.title}}</h2>
+<ol>
+    <li>Name of The Book:{{book.title}}</li>
+    <li>Author of The Book:{{book.author}}</li>
+    <li>Pages of The Book:{{book.pages}}</li>
+    <li>Price of The Book:{{book.price}}</li>
+</ol>
+
+<button class="btn btn-secondary"><a href="/">BOOK DASHBORD</a></button>
+
+ 
+{% endblock %}

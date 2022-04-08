@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html'%}
+{% load static %}
+  {% block body_block%}
+  <link rel="stylesheet" type="text/css"   href="{% static 'css/signup.css' %}">
+      <br><br><br>
+       <div class="container">
+          <h1>Please signup to get Book Info...</h1>
+          <form method="post">
+            {{form.as_p}}
+            {% csrf_token%}
+            <input type="submit"   class="btn btn-success" name="" value="Signup">
+          </form>
+
+        {%  endblock %}

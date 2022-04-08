@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load static %}
+  {% block body_block%}
+  <link rel="stylesheet" type="text/css"   href="{% static 'css/delete.css' %}">
+    <h1>Do You want to really delete Book: {{book.name}}???</h1>
+    <form  method="post">
+      {% csrf_token %}
+      <input type="submit" class="btn btn-danger" name="" value="Delete Beer">
+      <a class="btn btn-success" href="/{{beer.id}}">Cancel</a>
+    </form>
+  {% endblock %}

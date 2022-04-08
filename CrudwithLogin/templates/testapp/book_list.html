@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load static %}
+ 
+{% block body_block %}
+
+<link rel="stylesheet" type="text/css"   href="{% static 'css/hm.css' %}">
+
+<h1>BOOKS INFROMATIONS</h1>
+{% if book_list %}
+<h1>ALL BOOK INFROMATIONS</h1>
+<table border="2" align="center"> 
+    <thead>
+        <th>BOOK TITLE</th>
+        <th>BOOK DETAILS</th>
+        <th>UPDATE</th>
+        <th>DELETE</th>
+    </thead>
+    {% for book in book_list %}
+     <tr>
+         <td>{{book.title}}</td>
+         <td><a href="/{{book.id}}">Details</a></td>
+         <td><a href="/update/{{book.id}}">Update</a></td>
+         <td><a href="/delete/{{book.id}}">Delete</a></td>
+     </tr>
+     {% endfor %}
+
+
+</table>
+{% else %}
+<h1>NO RECORD FOUND</h1>
+{% endif %}
+
+<a href="/create" class="btn btn-success">Insert New Book Record Here</a>
+
+{% endblock %}
